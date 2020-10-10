@@ -7,7 +7,7 @@
  */
 define('MODX_API_MODE', true);
 //define('XPDO_CLI_MODE',false);
-require_once dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/index.php';
+require_once dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/public_html/index.php';
 
 $modx->setLogTarget('ECHO');
 $modx->setLogLevel(MODX_LOG_LEVEL_INFO);
@@ -32,7 +32,7 @@ $excludedSnippets = array(
     'Wayfinder',
     'GoogleSiteMap'
 );
-$savePath = MODX_CORE_PATH.'components/gitmodx/elements/snippets/';
+$savePath = MODX_BASE_PATH . 'elements/snippets/';
 $snippets = $modx->getCollection('modSnippet');
 /**
  * @var modSnippet[] $snippets

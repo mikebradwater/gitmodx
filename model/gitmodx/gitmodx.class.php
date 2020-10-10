@@ -152,7 +152,7 @@ class gitModx extends modX
 
         if($contextKey){
             //Extending standard event-plugin map by file-based plugins
-            $pluginsConfigFile = dirname(dirname(dirname(__FILE__))).'/elements/plugins/plugins.inc.php';
+            $pluginsConfigFile = MODX_BASE_PATH . '/elements/plugins/plugins.inc.php';
             if(file_exists($pluginsConfigFile)){
                 $gitPluginsMap = include $pluginsConfigFile;
                 $eventElementMap = is_array($eventElementMap) ? $eventElementMap : array();

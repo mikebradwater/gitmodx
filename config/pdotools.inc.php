@@ -8,6 +8,6 @@ $pdoToolsConfig = array(
     //Set to true if you want to use {$modx->...} in your fenom templates
     'pdotools_fenom_modx' => false,
     'pdotools_fenom_options' => '',
-    'pdotools_elements_path' => '{core_path}components/gitmodx/elements/chunks/',
+    'pdotools_elements_path' => '{base_path}elements/chunks/',
 );
 return $pdoToolsConfig;

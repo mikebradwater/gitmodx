@@ -7,7 +7,7 @@
  */
 define('MODX_API_MODE', true);
 //define('XPDO_CLI_MODE',false);
-require_once dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/index.php';
+require_once dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/public_html/index.php';
 
 $modx->setLogTarget('ECHO');
 $modx->setLogLevel(MODX_LOG_LEVEL_INFO);
@@ -26,8 +26,8 @@ $excludedCategories = array(
     'ms2Gallery'
 );
 
-$savePath = MODX_CORE_PATH.'components/gitmodx/elements/templates/';
-$staticFilePath = 'core/components/gitmodx/elements/templates/';
+$savePath = MODX_BASE_PATH.'elements/templates/';
+$staticFilePath = 'elements/templates/';
 $templates = $modx->getCollection('modTemplate');
 /**
  * @var modTemplate[] $templates
@@ -38,7 +38,6 @@ foreach($templates as $template)
      * @var modCategory $cat
      */
     $cat = $template->getOne('Category');
-
     $arr = $template->toArray();
     $arr['category'] = $cat ? $cat->category : null;
     $arr['properties'] = '';

@@ -5,7 +5,7 @@
  * Automaticaly replace include path and class name to gitmodx in index.php files and change absolute path in core.inc.php files
  */
 
-include dirname(dirname(dirname(dirname(dirname(__FILE__))))).'/'.'config.core.php';
+include dirname(dirname(dirname(dirname(dirname(__FILE__))))).'/public_html/'.'config.core.php';
 include MODX_CORE_PATH.'config/'.MODX_CONFIG_KEY.'.inc.php';
 
 $files = array(
@@ -22,9 +22,9 @@ foreach($files as $file){
 }
 
 $coreIncFiles = array(
-    MODX_BASE_PATH.'config.core.php' => "__DIR__.'/core/'",
-    MODX_CONNECTORS_PATH.'config.core.php' => "dirname(__DIR__).'/core/'",
-    MODX_MANAGER_PATH.'config.core.php' => "dirname(__DIR__).'/core/'",
+    MODX_BASE_PATH.'config.core.php' => "dirname(__DIR__).'/modxcore/'",
+    MODX_CONNECTORS_PATH.'config.core.php' => "dirname(dirname(__DIR__)).'/modxcore/'",
+    MODX_MANAGER_PATH.'config.core.php' => "dirname(dirname(__DIR__)).'/modxcore/'",
 );
 
 foreach($coreIncFiles as $file => $replace){
